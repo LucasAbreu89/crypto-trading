@@ -26,6 +26,10 @@
   /* Gradients */
   --gradient-primary: linear-gradient(135deg, #8b5cf6 0%, #00f5ff 100%);
   --gradient-card: linear-gradient(180deg, rgba(139, 92, 246, 0.1) 0%, rgba(0, 245, 255, 0.05) 100%);
+
+  /* Logo */
+  --logo-header-height: 56px;
+  --logo-footer-height: 64px;
 }
 
 @theme inline {
@@ -159,6 +163,21 @@ body {
   transform: translateY(-4px);
   box-shadow: 0 10px 40px rgba(0, 245, 255, 0.1), 0 0 20px rgba(139, 92, 246, 0.1);
   border-color: var(--accent-cyan);
+}
+
+.logo-image {
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.logo-image--header {
+  height: var(--logo-header-height);
+}
+
+.logo-image--footer {
+  height: var(--logo-footer-height);
 }
 
 /* Button Styles */

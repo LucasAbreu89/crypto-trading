@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X, Activity } from "lucide-react";
+import Image from "next/image";
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,15 +13,27 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#8b5cf6] to-[#00f5ff] flex items-center justify-center">
-              <Activity className="w-5 h-5 text-white" />
-            </div>
-            <span className="text-xl font-bold gradient-text">Axiom</span>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/logo.png"
+              alt="Axiom"
+              width={160}
+              height={48}
+              className="object-contain"
+              style={{ height: "var(--logo-header-height)", width: "auto" }}
+              priority
+              unoptimized
+            />
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
+            <Link
+              href="/live"
+              className="text-[#9ca3af] hover:text-white transition-colors"
+            >
+              Live
+            </Link>
             <Link
               href="/performance"
               className="text-[#9ca3af] hover:text-white transition-colors"
@@ -68,6 +81,13 @@ export default function Navbar() {
       {isOpen && (
         <div className="md:hidden glass border-t border-[#2d2d3d]">
           <div className="px-4 py-4 space-y-3">
+            <Link
+              href="/live"
+              className="block text-[#9ca3af] hover:text-white transition-colors"
+              onClick={() => setIsOpen(false)}
+            >
+              Live
+            </Link>
             <Link
               href="/performance"
               className="block text-[#9ca3af] hover:text-white transition-colors"

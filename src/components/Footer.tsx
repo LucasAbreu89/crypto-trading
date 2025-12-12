@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Activity, Twitter, Send, Mail } from "lucide-react";
+import Image from "next/image";
+import { Twitter, Send, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -8,11 +9,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#8b5cf6] to-[#00f5ff] flex items-center justify-center">
-                <Activity className="w-5 h-5 text-white" />
-              </div>
-              <span className="text-xl font-bold gradient-text">Axiom</span>
+            <Link href="/" className="flex items-center mb-4">
+              <Image
+                src="/logo.png"
+                alt="Axiom"
+                width={180}
+                height={54}
+                className="object-contain"
+                style={{ height: "var(--logo-footer-height)", width: "auto" }}
+                unoptimized
+              />
             </Link>
             <p className="text-[#9ca3af] text-sm max-w-md mb-4">
               Data-driven crypto trading signals powered by quantitative analysis.

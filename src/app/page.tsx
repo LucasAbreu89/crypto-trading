@@ -43,7 +43,10 @@ export default function Home() {
             {/* Left Content */}
             <div>
               {/* Live Badge */}
-              <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#2d2d3d] rounded-full px-4 py-2 mb-6">
+              <Link
+                href="/live"
+                className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#2d2d3d] rounded-full px-4 py-2 mb-6 transition-colors hover:border-[#3f3f57]"
+              >
                 <div className="w-2 h-2 rounded-full bg-[#10b981] live-indicator" />
                 <span className="text-sm text-[#9ca3af]">
                   <span className="text-[#10b981] font-medium">
@@ -51,7 +54,8 @@ export default function Home() {
                   </span>{" "}
                   currently active
                 </span>
-              </div>
+                <ChevronRight className="w-4 h-4 text-[#6b7280]" />
+              </Link>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
                 Trading Signals{" "}
